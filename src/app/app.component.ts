@@ -32,5 +32,15 @@ export class AppComponent {
       result => console.log('Has permission?',result.hasPermission),
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
     );
+
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.LOCATION).then(
+      result => console.log('Has permission?',result.hasPermission),
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.LOCATION)
+    );
+
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.STORAGE).then(
+      result => console.log('Has permission?',result.hasPermission),
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.STORAGE)
+    );
   }
 }
