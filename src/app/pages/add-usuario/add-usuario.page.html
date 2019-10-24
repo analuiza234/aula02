@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
   <ion-item lines="none">
     <img src="assets/perfil.jpg" (click)="tirarFoto()" *ngIf="!preview">
@@ -18,15 +19,14 @@
 
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email" [(ngModel)]="usuario.email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #e="ngModel"></ion-input>
-    </ion-item>
-    <ion-text color="danger" *ngIf="e.invalid && e.dirty">E-mail invalido!</ion-text>
-
+      <ion-input type="email" [(ngModel)]="usuario.email" name="email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #e="ngModel" ></ion-input>
+    </ion-item>  
+      <ion-text color="danger" *ngIf="(e.invalid && e.dirty)">E-mail invalido!</ion-text>
     <ion-item>
       <ion-label position="floating">Tel.</ion-label>
-      <ion-input type="tel" [(ngModel)]="usuario.tel" name="tel" required  [brmasker]="{phone: true}"></ion-input>
+      <ion-input type="text" [(ngModel)]="usuario.tel" name="tel" required></ion-input>
     </ion-item>
-
+   
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
       <ion-input type="password" [(ngModel)]="usuario.pws" name="pws" required minlength="7" #p="ngModel"></ion-input>
@@ -44,4 +44,8 @@
       <ion-button type="reset" color="danger" [routerLink]="['/']">Cancelar</ion-button>
     </ion-item>
   </form>
+  
+  <div id="map_canvas"></div>  
 </ion-content>
+
+
