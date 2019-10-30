@@ -11,6 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class PerfilUsuarioPage implements OnInit {
   protected usuario: Usuario = new Usuario;
   protected id: string = null;
+  
+  slideOpts = {
+    initialSlide: 1,
+    slidesPerView: 3,
+    speed: 400
+  };
 
   constructor(
     protected activatedRoute:ActivatedRoute,

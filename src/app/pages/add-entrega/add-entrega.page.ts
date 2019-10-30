@@ -5,6 +5,15 @@ import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { GoogleMaps, Marker, GoogleMapsEvent, GoogleMapOptions } from '@ionic-native/google-maps';
+
+import {
+  GoogleMap,
+  CameraPosition,
+  MarkerOptions,
+  Environment
+} from '@ionic-native/google-maps';
+
 
 @Component({
   selector: 'app-add-entrega',
@@ -16,6 +25,7 @@ export class AddEntregaPage implements OnInit {
   protected entrega: Entrega = new Entrega;
   protected id: string = null;
   protected preview: string[] = null;
+  protected map:GoogleMap;
 
   slideOpts = {
     initialSlide: 1,
@@ -123,7 +133,7 @@ export class AddEntregaPage implements OnInit {
   }
   async removerFoto(index){
       const alert = await this.alertController.create({
-        header: 'Confirmar Rmovação',
+        header: 'Confirmar Removação',
         message: 'Deseja romever a foto',
         buttons: [
           {
@@ -147,4 +157,8 @@ export class AddEntregaPage implements OnInit {
   
     this.preview.slice(index,1)
   }
+
+ 
+
+  
 }
